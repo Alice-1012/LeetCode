@@ -1,6 +1,6 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        result = [0]*101
+        result = [0]*1000
         answer = []
         
         for i in nums:
