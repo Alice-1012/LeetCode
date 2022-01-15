@@ -1,15 +1,11 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        result = [0]*1000
-        answer = []
-        
+        temp = sorted(nums)
+        temp_dict = {}
+        result = []
+        for i in range(len(temp)):
+            if (temp[i] not in temp_dict):
+                temp_dict[temp[i]] = i
         for i in nums:
-            result[i] = 0
-            for j in range(len(nums)):
-                if i>nums[j]:
-                    result[i] = result[i]+1
-                else:
-                    continue
-            
-            answer.append(result[i])
-        return answer
+            result.append(temp_dict[i])
+        return result
